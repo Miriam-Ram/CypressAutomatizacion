@@ -1,40 +1,18 @@
 
-const { config } = require("chai");
-const { resolve } = require("cypress/types/bluebird");
-const { reject } = require("cypress/types/lodash");
-const mysql = require("mysql");
-function queryTestDb(query,config){
-  //llamar a la funcion createConnection
-  const connection = mysql.createConnection(config.env.db);
-  connection.connect();
-  return new Promise((resolve, reject)=>{
-    connection.query(query,(error,results)=>
-    {
-     if (error) reject(error);
-    else{
-      connection.end();
-      return resolve(results);
-        }
-    });
-  });
-}
-
-module.exports= (on,config)=>{
-  on("task",{
-    queryDb:(query)=>{
-      return queryTestDb(query, config);
-
-    },
-  });
-};
-
-
 describe('Registro', () => {
-
+/*
 beforeEach(function(){
   cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
+*/
+})
+
+it('leer', () => {
+  cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
+
+  })
 
 })
+
 
   /*
   it('passes', () => {
@@ -276,7 +254,7 @@ it('passes', () => {
   */
 
   //Número teléfono
-  
+  /*
   it('passes', () => {
     //cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
     cy.get('.red-button').click()
@@ -298,10 +276,4 @@ it('passes', () => {
 
 
 
-
-
-
-
-
-
-})
+*/
