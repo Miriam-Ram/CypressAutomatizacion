@@ -1,0 +1,13 @@
+{
+    "config": {
+        "env": {
+            "db": {
+                "host": "150.136.237.75",
+                "user": "db_admin",
+                "password": "GrG_Db_@Dm1N_2022#",
+                "port": "63306",
+                "database": "toksdev"
+            }
+        }
+    }
+}
