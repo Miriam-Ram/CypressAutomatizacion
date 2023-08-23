@@ -3,13 +3,16 @@ describe('Registro', () => {
 /*
 beforeEach(function(){
   cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
-*/
-})
+
+})*/
 
 it('leer', () => {
-  cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
+  cy.readFile('./cypress/e2e/texto.txt').should('eq', 'miriam.garay') // true
+  //cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
 
-  })
+ // })
+
+
 
 })
 
@@ -274,6 +277,5 @@ it('passes', () => {
     cy.get('#mat-input-10').click()
   })
 
-
-
 */
+})
