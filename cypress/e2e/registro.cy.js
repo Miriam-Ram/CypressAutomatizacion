@@ -7,12 +7,14 @@ beforeEach(function(){
 })*/
 
 it('leer', () => {
-  cy.readFile('./cypress/e2e/texto.txt').should('eq', 'miriam.garay') // true
+  // cy.readFile('./cypress/e2e/texto.txt').should('eq', 'miriam.garay') // true
   //cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
 
  // })
 
+  cy.visit('/register#/register');
 
+  cy.registerShowErrors();
 
 })
 

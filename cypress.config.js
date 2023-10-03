@@ -20,6 +20,7 @@ module.exports = defineConfig({
         },
       });
     },
+    baseUrl: 'https://plcomer.toksopc.grupotoks.com.mx'
   },
 });
 
