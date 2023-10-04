@@ -6,6 +6,7 @@ beforeEach(function(){
 
 })*/
 
+/*
 it('leer', () => {
   cy.readFile('./cypress/e2e/texto.txt').should('eq', 'miriam.garay') // true
   //cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
@@ -15,9 +16,9 @@ it('leer', () => {
 
 
 })
+*/
 
-
-  /*
+  
   it('passes', () => {
     cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
 
@@ -29,19 +30,41 @@ it('leer', () => {
     //cy.get('.mat-datepicker-toggle > .mat-focus-indicator > .mat-button-wrapper > .mat-icon').click()
     cy.get('#mat-input-5').type('01/01/2000')
     //cy.get('.mat-calendar-previous-button')
-    cy.get('#mat-input-6').type('54720')
-    cy.get('#mat-input-7').click()
-    cy.wait(5000)
-    cy.get('#mat-input-7').type('wruy@yutep.com')
+    cy.get('#mat-input-6').type('5567862298')
+    cy.get('#mat-input-7').type('wruyy@yutep.com')
     cy.get('#mat-input-8').type('Hola1234')
     cy.get('#mat-input-9').type('Hola1234')
-    cy.get('.mat-checkbox-inner-container').click()
-    cy.get('form.ng-star-inserted > .flex-container > .btn-register > .mat-focus-indicator').click()
-    //numero de telefono
-    //cy.get('#mat-input-10').type('55679887797')
-    cy.get('#mat-button-toggle-2-button > .mat-button-toggle-label-content').click()
-    //cy.get('#mat-input-11').type('0000412243')
-    cy.get('.ng-invalid > :nth-child(1) > .flex-container > .btn-register > .mat-focus-indicator').click()
+    cy.get('#mat-mdc-checkbox-1-input').click()
+    cy.get('form.ng-star-inserted > .flex-container > .btn-register > .btn-next > .mdc-button__label').click()
+
+    /*cy.task("queryDb", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
+    .then((result) =>{
+      cy.log(result).then(()=>{
+      });
+    })*/
+    cy.wait(5000)
+    let nip = cy.task("queryDb", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
+   nip.then((nipPhone)=>{
+    console.log(nipPhone) 
+    console.log("Estamos llegano aki");
+   })
+   
+
+
+    
+
+
+    /*cy.get('#mat-input-23').click()
+    cy.get('#mat-input-23').type('1')
+    cy.get('#mat-input-24').type('2')
+    cy.get('#mat-input-25').type('3')
+    cy.get('#mat-input-26').type('4')
+    */
+
+    cy.get('.apply-button > .mat-mdc-button-touch-target')
+
+
+
   })
  
   //Obligatoridad de datos

@@ -7,15 +7,24 @@ function queryTestDb(query, config) {
   connection.connect()
 
   return new Promise((resolve, reject) => {
-    connection.query(query, (error, results) => {
+    connection.query(query, (error, [rows]) => {
       if (error) reject(error)
       else {
         connection.end()
-        console.log(results)
-        return resolve(results)
+        console.log(rows)
+        resolve(rows.Nip)
       }
     });
   });
+
+/*   connection.promise().query(query)
+  .then( ([rows,fields]) => {
+    console.log(rows[0].Nip,fields);
+    const Niptel= rows[0].Nip;
+    return Niptel.split("")
+  })
+  .catch(console.log)
+  .then( () => connection.end()); */
 }
 
 module.exports = queryTestDb;
