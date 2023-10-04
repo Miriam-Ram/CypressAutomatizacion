@@ -1,0 +1,25 @@
+{
+  "elements": {
+    "btnShowModalLogin": ".login-button > .mat-button-wrapper",
+    "inputEmail": "#mat-input-0",
+    "inputPassword": "#mat-input-1",
+    "btnLogin": ".registre-button > .mat-focus-indicator",
+    "btnLogout": ":nth-child(2) > .logout-button",
+    "labelError": ".errorlogin",
+    "btnSessionExpiredAccept": ".cdk-focused > .mat-button-wrapper",
+    "btnSessionExpiredCancel": ".mat-dialog-actions > :nth-child(2) > .mat-button-wrapper"
+  },
+  "credentials":{
+    "credential1":{
+      "email": "ragarit527@synclane.com",
+      "password": "Hola1234"
+    },
+    "credential2":{
+      "email": "nosins@vixej.com",
+      "password": "Hola12345"
+    }
+  },
+  "messages": {
+    "msg1": "Tu usuario y/o contraseña no son correctos, inténtalo de nuevo."
+  }
+}

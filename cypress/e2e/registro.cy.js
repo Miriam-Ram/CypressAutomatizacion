@@ -1,21 +1,16 @@
 
 describe('Registro', () => {
 
-  beforeEach(function(){
-    cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
+beforeEach(function(){
+  cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
+
+})
+
+  it('ejemplo', () => {
+    cy.visit('/register#/register');
+    cy.registerShowErrors();
   })
 
-
-// it('leer', () => {
-//   cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
-//   cy.task("getNipRegistro", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
-//     .then((result) =>{
-//       cy.log(result);
-//   });
-// })
-
-
-  
   it('passes', () => {
     cy.get('.red-button').click()
     cy.get('#mat-input-2').type('Miriam')
