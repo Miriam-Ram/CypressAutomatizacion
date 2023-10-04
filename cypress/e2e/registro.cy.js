@@ -1,27 +1,22 @@
 
 describe('Registro', () => {
-/*
-beforeEach(function(){
-  cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
 
-})*/
-
-/*
-it('leer', () => {
-  cy.readFile('./cypress/e2e/texto.txt').should('eq', 'miriam.garay') // true
-  //cy.readFile('./cypress/e2e/texto.txt').then((text)=>{
-
- // })
+  beforeEach(function(){
+    cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
+  })
 
 
+// it('leer', () => {
+//   cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
+//   cy.task("getNipRegistro", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
+//     .then((result) =>{
+//       cy.log(result);
+//   });
+// })
 
-})
-*/
 
   
   it('passes', () => {
-    cy.visit('https://plcomer.toksopc.grupotoks.com.mx')
-
     cy.get('.red-button').click()
     cy.get('#mat-input-2').type('Miriam')
     cy.get('#mat-input-3').type('Garay')
@@ -29,42 +24,24 @@ it('leer', () => {
     //cy.get('.mat-form-field-suffix').click()
     //cy.get('.mat-datepicker-toggle > .mat-focus-indicator > .mat-button-wrapper > .mat-icon').click()
     cy.get('#mat-input-5').type('01/01/2000')
-    //cy.get('.mat-calendar-previous-button')
-    cy.get('#mat-input-6').type('5567862298')
+    // cy.get('.mat-calendar-previous-button')
+    cy.get('#mat-input-6').type('2261076150')
     cy.get('#mat-input-7').type('wruyy@yutep.com')
     cy.get('#mat-input-8').type('Hola1234')
     cy.get('#mat-input-9').type('Hola1234')
     cy.get('#mat-mdc-checkbox-1-input').click()
     cy.get('form.ng-star-inserted > .flex-container > .btn-register > .btn-next > .mdc-button__label').click()
-
-    /*cy.task("queryDb", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
+    // cy.wait(5000)
+    cy.task("getNipRegistro", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="522261076150" ORDER BY CreationDate DESC limit 1')
     .then((result) =>{
-      cy.log(result).then(()=>{
-      });
-    })*/
-    cy.wait(5000)
-    let nip = cy.task("queryDb", 'SELECT Nip FROM RegisterNip WHERE PhoneNumber ="525567862298" ORDER BY CreationDate DESC limit 1')
-   nip.then((nipPhone)=>{
-    console.log(nipPhone) 
-    console.log("Estamos llegano aki");
-   })
-   
+      cy.get('#mat-input-23').click()
+      cy.get('#mat-input-23').type(result[0])
+      cy.get('#mat-input-24').type(result[1])
+      cy.get('#mat-input-25').type(result[2])
+      cy.get('#mat-input-26').type(result[3])
+    })
 
-
-    
-
-
-    /*cy.get('#mat-input-23').click()
-    cy.get('#mat-input-23').type('1')
-    cy.get('#mat-input-24').type('2')
-    cy.get('#mat-input-25').type('3')
-    cy.get('#mat-input-26').type('4')
-    */
-
-    cy.get('.apply-button > .mat-mdc-button-touch-target')
-
-
-
+    // cy.get('.apply-button > .mat-mdc-button-touch-target')
   })
  
   //Obligatoridad de datos
